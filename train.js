@@ -8,7 +8,7 @@ const list = [
     "endi dam oling foydasi yoq endi", //60
 ]
 
-function maslahatBering (a, callback) {
+ function maslahatBering (a, callback) {
     if(typeof a !== "number") callback("insert a number", null);
     else if (a <= 20) callback(null, list[0]);
     else if (a > 20 && a <= 30) callback(null, list[1]);

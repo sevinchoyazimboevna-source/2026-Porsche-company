@@ -84,7 +84,7 @@ let count = 0;
 
 function calculate(tutu) {
  for(let i = 0; i < tutu.length; i++) {
-    if (tutu[i] <= 17) {
+    if (tutu[i] <= 7 && tutu[i] >= 9) {
         count ++
     }
   }

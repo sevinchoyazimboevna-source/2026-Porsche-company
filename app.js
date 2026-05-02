@@ -16,7 +16,7 @@ const app = express();
 //MongoDB connect
 
 const db = require("./server").db();
-const mongodb = require("mongodb");
+const mongodb = require('mongodb');
 
 // 1;Kirish codlari
 

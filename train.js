@@ -104,68 +104,39 @@
 //     }
 // }
 
+
+
 const moment = require('moment');
-
-
-// console.log('====================================');
-// console.log(moment().format('MMMM Do YYYY, h:mm a'));
-// console.log('====================================');
-
-
-const time = moment().format('MMMM DAY YYYY, h:mm a');
+const time = moment().format('MMMM Do YYYY, h:mm a');
 
 class Shop {
-    constructor(param1, param2, param3) {
-        this.param1 = param1;
-        this.param2 = param2;
-        this.param3 = param3;
+  
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
 
-    }
-    // qoldiq parametr berildi boshqa mahsulot ham hisobga olgan holda
-    qoldiq(item1, item2, item3) {
-        console.log('====================================');
-        console.log(`Bugun hozir ${time} da ${this.param1} ta ${item1}, ${this.param2} ta ${item2} va ${this.param3} ta ${item3} mavjud! `);
-        console.log('====================================');
-    }
-
-    sotish(item, num) {
-        if (item === "non") {
-            this.param1 -= num;
-        } else if (item === "lag'mon") {
-            this.param2 -= num;
-        } else {
-            this.param3 -= num;
-        }
-    }
-
-    qabul(item, num) {
-        if (item === "non") {
-            this.param1 += num;
-        } else if (item === "lag'mon") {
-            this.param2 += num;
-        } else {
-            this.param3 += num;
-        }
-    }
+  qoldiq() {  
+  console.log(`Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`);
 }
 
+  sotish(product, others) {
+    this[product] -= others;
+    console.log(`Hozir ${time}da ${this.non}ta non , ${this.lagmon}ta lag'mon va ${this.cola}ta cola sotildi!`);
 
+  }
 
+  qabul(product, others) {
+    this[product] += others;
+    console.log(`Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola qabul qilindi!`);
+
+  }
+
+}
 const shop = new Shop(4, 5, 2);
 
-shop.qoldiq("non", "lag'mon", "cola");  // SHOP faqat non lagmon va cola emas boshqa mahsulotlar bolishi ham mumkin deb qoldiq metodga parametr berildi.
-
-// shop.sotish("non", 3)
-
-// shop.qoldiq("non", "lag'mon", "cola")
-
-// shop.qabul("cola", 4)
-
-// shop.qoldiq("non", "lag'mon", "cola")
-
-// shop.qabul("lag'mon", 4)
-// shop.qoldiq("non", "lag'mon", "cola")
-
+shop.qoldiq();
 shop.sotish("non", 3);
 shop.qabul("cola", 4);
-shop.qoldiq("non", "lag'mon", "cola");
+shop.qoldiq();

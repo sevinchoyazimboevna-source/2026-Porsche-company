@@ -106,37 +106,47 @@
 
 
 
-const moment = require('moment');
-const time = moment().format('MMMM Do YYYY, h:mm a');
+// const moment = require('moment');
+// const time = moment().format('MMMM Do YYYY, h:mm a');
 
-class Shop {
+// class Shop {
   
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  qoldiq() {  
-  console.log(`Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`);
+//   qoldiq() {  
+//   console.log(`Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola mavjud!`);
+// }
+
+//   sotish(product, others) {
+//     this[product] -= others;
+//     console.log(`Hozir ${time}da ${this.non}ta non , ${this.lagmon}ta lag'mon va ${this.cola}ta cola sotildi!`);
+
+//   }
+
+//   qabul(product, others) {
+//     this[product] += others;
+//     console.log(`Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola qabul qilindi!`);
+
+//   }
+
+// }
+// const shop = new Shop(4, 5, 2);
+
+// shop.qoldiq();
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+// shop.qoldiq();
+
+
+//MITASK-D
+
+function angel(a, b) {
+  return a !== b
 }
-
-  sotish(product, others) {
-    this[product] -= others;
-    console.log(`Hozir ${time}da ${this.non}ta non , ${this.lagmon}ta lag'mon va ${this.cola}ta cola sotildi!`);
-
-  }
-
-  qabul(product, others) {
-    this[product] += others;
-    console.log(`Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lag'mon va ${this.cola}ta cola qabul qilindi!`);
-
-  }
-
-}
-const shop = new Shop(4, 5, 2);
-
-shop.qoldiq();
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
-shop.qoldiq();
+ 
+const result = angel("arbzil", "brazil");
+console.log("next:", result);

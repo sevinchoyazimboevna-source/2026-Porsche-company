@@ -6,11 +6,11 @@ let db;
 const connectionString = 
 "mongodb+srv://Angel:qwertyon_2786@cluster0.gs4tnic.mongodb.net/Reja?retryWrites=true&w=majority";
 
-mongodb.connect(
-    connectionString,
+mongodb.connect(  //m-db ni objectiga connect degan methodga 3 ta argument berish
+    connectionString, //
      {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true, //data basega ulanishi uchun tru qilish kerak
 }, 
 (err, client) => {
     if (err) console.log("ERROR on connecting MongoDB");

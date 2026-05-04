@@ -59,21 +59,37 @@ console.log(e.target);
 
 
   //edit operation
-  if(e.target.classList.contains("edit-me")) {
-    let userInput = prompt(
-        "Ozgarish kiriting",
-        e.target.parentElement.parentElement.querySelector(".item-text").innerHTML
-    );
-    if (userInput) {
-        axios.
-        post("/edit-item", {
-            id: e.target.getAttribute("data-id"),
-            new_input: userInput,
-        }).then(response => {
-           console.log(response);
-        }).catch(err => {
+  if (e.target.classList.contains("edit-me")) {
+        // console.log(1);
+        // let userInput = prompt("You can edit now...", "edit please...");
+        let userInput = prompt(
+            "You can edit now...",
+            e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+        // console.log(2)
 
-        })
+        if (userInput) {
+            axios.post("/edit-item", { id: e.target.getAttribute("data-id"), new_input: userInput })
+                .then((response) => {
+                    console.log(response.data);
+                    e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput
+                })
+                .catch((err) => {
+                    console.log("Please try again...");
+                })
+            // console.log(userInput);
+        }
+
+        // alert("You are going to EDIT")
     }
-}
-});
+
+    // console.log('====================================');
+    // console.log(e);
+    // console.log('====================================');
+})
+
+document.getElementById("clean-all").addEventListener("click", function () {
+    axios.post("/delete-all", { delete_all: true }).then((response) => {
+        alert(response.data.state);
+        document.location.reload();
+    })
+})

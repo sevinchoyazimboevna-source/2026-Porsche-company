@@ -66,10 +66,19 @@ function(err, data) {
 
 
 app.post("/edit-item", (req, res) => {
-const data = req.body;
-console.log(data);
-res.end("done");
-});
+    // console.log(2)
+
+    const data = req.body;
+    // console.log(data);
+    // console.log(3)
+    db.collection("plans").findOneAndUpdate(
+        { _id: new mongodb.ObjectId(data.id) },
+        { $set: { reja: data.new_input } },
+        function (err, data) {
+            res.json({ state: "success" });
+        });
+    // res.end("done")
+})
 
 
 

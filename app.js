@@ -78,6 +78,14 @@ app.post("/edit-item", (req, res) => {
             res.json({ state: "success" });
         });
     // res.end("done")
+});
+
+app.post("/delete-all", (req, res) => {
+    if (req.body.delete_all) {
+        db.collection("plans").deleteMany(function () {
+            res.json({ state: "all items are being deleted!!!" });
+        });
+    }
 })
 
 

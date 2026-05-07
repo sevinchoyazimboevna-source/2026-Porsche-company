@@ -172,7 +172,20 @@
 
 //MITASK-E
 
-function getReverse(angel) {
-    return angel.split('').reverse().join('');
+// function getReverse(angel) {
+//     return angel.split('').reverse().join('');
+// }
+// console.log(getReverse("hello")); // "olleh"
+
+//MITASK-F
+
+function findDoublers(an) {
+  for (let i = 0; i < an.length; i++) {
+    if (an.indexOf(an[i]) !== i) {
+      return true;
+    }
+  }
+  return false;
 }
-console.log(getReverse("hello")); // "olleh"  
+
+console.log(findDoublers("hello")); // true

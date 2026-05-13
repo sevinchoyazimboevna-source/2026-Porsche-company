@@ -192,20 +192,35 @@
 
 //MITASK-G
 
-function getHighestIndex(a) {
-    let max = a[0];
-    let highestIndex = 0;
+// function getHighestIndex(a) {
+//     let max = a[0];
+//     let highestIndex = 0;
 
-    let i = 0;
-    for (let num of a) {
-        if (num > max) {
-            max = num;
-            highestIndex = i;
+//     let i = 0;
+//     for (let num of a) {
+//         if (num > max) {
+//             max = num;
+//             highestIndex = i;
+//         }
+//         i++;
+//     }
+
+//     return highestIndex;
+// }
+
+// console.log(getHighestIndex([5, 21, 122, 12, 8])); //0 dan boshlab katta sonini indexi 2 boladi
+
+// MITASK-H
+
+function getPositive(arr) {
+    let result = "";
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            result += arr[i];
         }
-        i++;
     }
 
-    return highestIndex;
+    return result;
 }
-
-console.log(getHighestIndex([5, 21, 122, 12, 8])); //0 dan boshlab katta sonini indexi 2 boladi
+console.log(getPositive([7, -7, 77]));

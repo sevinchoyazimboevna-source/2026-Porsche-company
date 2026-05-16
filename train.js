@@ -212,15 +212,41 @@
 
 // MITASK-H
 
-function getPositive(arr) {
-    let result = "";
+// function getPositive(arr) {
+//     let result = "";
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > 0) {
+//             result += arr[i];
+//         }
+//     }
+
+//     return result;
+// }
+// console.log(getPositive([7, -7, 77]));
+
+// MITASK-I
+
+function majorityElement(arr) {
+    let max = arr[0];
+    let maxCount = 0;
 
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > 0) {
-            result += arr[i];
+        let count = 0;
+
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                count++;
+            }
+        }
+
+        if (count > maxCount) {
+            maxCount = count;
+            max = arr[i];
         }
     }
 
-    return result;
+    return max;
 }
-console.log(getPositive([7, -7, 77]));
+
+console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); // 4
